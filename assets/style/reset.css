@@ -18,7 +18,7 @@ html, body {
 body {
     font-family: "Montserrat", "sans-serif", Arial, sans-serif;
     line-height: 1.4;
-    background-color: #d4dce0;
+    background: linear-gradient(to right, #6157E2, #3C3F7F);
 }
 
 a {

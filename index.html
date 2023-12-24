@@ -6,7 +6,7 @@
         <meta name="author" content="Bernard">
         <meta name ="description" content="Bernard: Student">
         <meta name="keywords" content="web developer, web, developer, front-end, html, css, javascript, react, sql">
-        <title>Currency exchange</title>
+        <title>Dictionary</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
@@ -14,6 +14,39 @@
         <link rel="stylesheet" href="./assets/style/index.css">
         <script src="./assets/script/app.js" type="module"></script>
     </head>
-    <body>   
+    <body>
+        <main>
+            <div class="container content">
+                <h1>What word do you want to lookup?</h1>
+                <section class="search-container">
+                    <div>
+                        <img src="./assets/img/reading-1.png" alt="">
+                    </div>
+                    <div class="input-container">
+                        <div>
+                            <input type="text" placeholder="Search">
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                        <p class="such-as">Such as: moon, nature, sunset...</p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/reading-2.png" alt="">
+                    </div> 
+                </section>
+                <section class="word-container">
+                    <p class="word">food</p>
+                    <div class="phonetics">
+                        <p>fu:d</p>
+                        <button type="button" class="listen">Listen</button>
+                    </div>
+                </section>
+                <section class="meaning-container">
+                    <p class="part-of speech">noun</p>
+                    <p class="meaning"></p>
+                </section>
+            </div>
+        </main>
     </body>
 </html>
