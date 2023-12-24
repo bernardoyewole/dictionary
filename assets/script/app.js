@@ -116,6 +116,7 @@ function appendMeanings(arr) {
             if (obj.hasOwnProperty('example')) {
                 let exampleParag = create('p');
                 exampleParag.innerText = obj.example;
+                exampleParag.classList.add('example');
                 meaningBox.appendChild(exampleParag);
             }
         });

@@ -141,9 +141,14 @@ input {
 }
 
 .meaning-container p + p {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .invalid {
     color: #ba0404;
+}
+
+.example {
+    color: #535354;
+    font-style: italic;
 }
