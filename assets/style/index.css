@@ -7,16 +7,6 @@
     margin-inline: auto;
 }
 
-/* body {
-    font-weight: 600;
-} */
-
-/* ------------------Main style------------------ */
-/* ---------------------------------------------- */
-/* main {
-    height: 100%;
-} */
-
 .content {
     height: 100%;
     display: flex;
@@ -31,6 +21,9 @@
     color: #fff;
     font-size: 26px;
 }
+
+/* -----------Input container style-------------- */
+/* ---------------------------------------------- */
 
 section {
     background-color: #fff;
@@ -73,6 +66,7 @@ input {
     transition: all 0.3s ease-in-out;
     font-weight: 500;
     color: #1f1f1f;
+    font-size: 18px;
 }
 
 /* input:focus {
@@ -98,4 +92,56 @@ input {
 .search-box i {
     font-size: 20px;
     color: #3C3F7F;
+}
+
+/* -----------Word container style-------------- */
+/* --------------------------------------------- */
+
+.word {
+    font-size: 32px;
+    color: #3C3F7F;
+    font-weight: 600;
+    padding-bottom: 6px;
+}
+
+.phonetics {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phonetics-text {
+    font-size: 20px;
+    color: #4d4d54;
+}
+
+.listen {
+    background-color: #fff;
+    color: #58a71d;
+    font-weight: 600;
+    border: 2px solid #58a71d;
+    padding: 4px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* -----------Meaning container style------------ */
+/* --------------------------------------------- */
+
+.part-of-speech {
+    color: #3C3F7F;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.meaning {
+    padding-top: 10px;
+}
+
+.meaning p {
+    font-weight: 500;
+}
+
+.meaning p + p {
+    padding-top: 10px;
 }
