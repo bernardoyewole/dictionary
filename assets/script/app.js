@@ -8,7 +8,7 @@ const word = select('.word');
 const phoneticsText = select('.phonetics-text');
 const listen = select('.listen');
 const partOfSpeech = select('.part-of-speech');
-const meaning = select('.meaning');
+const content = select('.content');
 const suchAs = select('.such-as');
 
 let inputWord;
@@ -36,11 +36,11 @@ async function getWordInfo() {
         const meanings = wordInfo[0].meanings;
         const phonetics = wordInfo[0].phonetics;
 
-        // console.log(phonetics);
+        console.log(meanings);
         setWord(inputWord, phonetics);
-
+        appendMeanings(meanings);
     } catch(error) {
-        suchAs.innerText = `Sorry pal, we couldn't find the word you're looking for`;
+        suchAs.innerText = `Sorry, we couldn't find the word you're looking for`;
     }
 }
 
@@ -86,8 +86,39 @@ onEvent('keydown', window, (event) => {
     if (event.key === 'Enter') {
         searchFns();
     }
-})
+});
 
 onEvent('click', listen, () => {
     audio.play();
 });
+
+let meaningBox;
+let meaningHeading;
+let paragraph;
+let count = 0;
+
+function appendMeanings(arr) {
+    selectAll('.meaning-container').forEach(container => content.removeChild(container));
+    arr.forEach(obj => {
+        meaningBox = create('section');
+        meaningBox.classList.add('meaning-container');
+        meaningHeading = create('p');
+        meaningHeading.innerText = obj.partOfSpeech;
+        meaningHeading.classList.add('part-of-speech');
+        meaningBox.appendChild(meaningHeading);
+        content.appendChild(meaningBox);
+
+        obj.definitions.forEach(obj => {
+            count++;
+            paragraph = create('p');
+            paragraph.innerText = `${count}. ${obj.definition}`;
+            meaningBox.appendChild(paragraph);
+            if (obj.hasOwnProperty('example')) {
+                let exampleParag = create('p');
+                exampleParag.innerText = obj.example;
+                meaningBox.appendChild(exampleParag);
+            }
+        });
+        count = 0;
+    });
+}

@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding-top: 40px;
+    padding: 40px 0;
 }
 
 .content > h1 {
@@ -26,10 +26,10 @@
 /* ---------------------------------------------- */
 
 section {
-    background-color: #fff;
     width: 90%;
     padding: 20px;
     border-radius: 6px;
+    background-color: #fff;
 }
 
 .search-container {
@@ -93,9 +93,12 @@ input {
 
 /* -----------Word container style-------------- */
 /* --------------------------------------------- */
+.word-container {
+    background-color: #fff;
+}
 
 .word {
-    font-size: 32px;
+    font-size: 36px;
     color: #3C3F7F;
     font-weight: 600;
     padding-bottom: 6px;
@@ -134,17 +137,10 @@ input {
     color: #3C3F7F;
     font-weight: 600;
     font-size: 18px;
+    padding-bottom: 10px;
 }
 
-.meaning {
-    padding-top: 10px;
-}
-
-.meaning p {
-    font-weight: 500;
-}
-
-.meaning p + p {
+.meaning-container p + p {
     padding-top: 10px;
 }
 
