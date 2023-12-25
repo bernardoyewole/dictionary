@@ -1,6 +1,6 @@
-## Calculator
+## Dictionary
 
-This is a simple calculator that can be used for basic arithmetic operations.
+Discover word meanings effortlessly with our dictionary, powered by a seamless API integration.
 
 ### Built With
 <p align='center'>
@@ -10,10 +10,4 @@ This is a simple calculator that can be used for basic arithmetic operations.
 </p>
 
 ## Demo
-Click [here](https://bernardoyewole.github.io/calculator/) to check it out.
-
-A demo is show below:
-
-<p align='center'>
-<img src='./assets/img/calculator.png'>
-</p>
+Click [here](https://bernardoyewole.github.io/dictionary/) to check it out.

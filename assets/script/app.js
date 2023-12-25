@@ -7,14 +7,15 @@ const search = select('.search');
 const word = select('.word');
 const phoneticsText = select('.phonetics-text');
 const listen = select('.listen');
-const partOfSpeech = select('.part-of-speech');
 const content = select('.content');
 const suchAs = select('.such-as');
 
 let inputWord;
 
 onEvent('load', window, () => {
-    // input.value = '';
+    input.value = '';
+    inputWord = 'winter';
+    getWordInfo();
 });
 
 const options = {
@@ -27,7 +28,7 @@ async function getWordInfo() {
 
     try {
         const response = await fetch(URL, options);
-        
+
         if (!response.ok) {
             throw new Error(`${response.statusText} (${response.status})`);
         }
@@ -36,7 +37,6 @@ async function getWordInfo() {
         const meanings = wordInfo[0].meanings;
         const phonetics = wordInfo[0].phonetics;
 
-        console.log(meanings);
         setWord(inputWord, phonetics);
         appendMeanings(meanings);
     } catch(error) {
@@ -45,17 +45,32 @@ async function getWordInfo() {
 }
 
 let audio;
+let audioAvailable = false;
+let phoneticsAvailable = false;
 
 function setWord(str, arr) {
     word.innerText = str;
-    
+
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].text !== '' && arr[i].audio !== '') {
+        if (arr[i].hasOwnProperty('text') && arr[i].text !== '') {
+            console.log(arr[i])
             phoneticsText.innerText = arr[i].text;
-            audio = new Audio(arr[i].audio);
+            phoneticsAvailable = true;
             break;
         }
     }
+
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i].hasOwnProperty('audio') && arr[i].audio !== '') {
+            audio = new Audio(arr[i].audio);
+            audioAvailable = true;
+            listen.style.display = 'block';
+            break;
+        }
+    }
+
+    audioAvailable ? '' : listen.style.display = 'none';
+    phoneticsAvailable ? '' : phoneticsText = '';
 }
 
 function isValid(str) {
@@ -74,6 +89,8 @@ function searchFns() {
     suchAs.innerText = 'Such as: moon, nature, sunset...';
     suchAs.classList.remove('invalid');
     input.blur();
+    audioAvailable = false;
+    phoneticsAvailable = false;
 }
 
 onEvent('click', search, () => {
