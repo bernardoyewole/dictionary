@@ -40,8 +40,8 @@ section {
 }
 
 .search-container img {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
 }
 
 .input-container > div {
@@ -93,6 +93,7 @@ input {
 
 /* -----------Word container style-------------- */
 /* --------------------------------------------- */
+
 .word-container {
     background-color: #fff;
 }
@@ -151,4 +152,67 @@ input {
 .example {
     color: #535354;
     font-style: italic;
+}
+
+/* ----------------Media Queries----------------- */
+/* ---------------------------------------------- */
+
+@media screen and (max-width: 880px) {
+    .search-container img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .search-container {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .search-container img {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .search-container img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    section {
+        width: 100%;
+    }
+
+    .content > h1 {
+        font-size: 24px;
+    }   
+}
+
+@media screen and (max-width: 468px) {
+    input {
+        width: 300px;
+    }
+
+    .content > h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    input {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    input {
+        width: 200px;
+    }
+
+    .content > h1 {
+        font-size: 18px;
+    }
 }

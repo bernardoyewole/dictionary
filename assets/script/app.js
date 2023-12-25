@@ -49,11 +49,10 @@ let audioAvailable = false;
 let phoneticsAvailable = false;
 
 function setWord(str, arr) {
-    word.innerText = str;
+    word.innerText = str.toLowerCase();
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].hasOwnProperty('text') && arr[i].text !== '') {
-            console.log(arr[i])
             phoneticsText.innerText = arr[i].text;
             phoneticsAvailable = true;
             break;
@@ -70,7 +69,7 @@ function setWord(str, arr) {
     }
 
     audioAvailable ? '' : listen.style.display = 'none';
-    phoneticsAvailable ? '' : phoneticsText = '';
+    phoneticsAvailable ? '' : phoneticsText.innerText = '';
 }
 
 function isValid(str) {
